@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RideOn", "src\RideOn\RideOn.csproj", "{4B3FCE72-2D5F-4109-BA51-496508AA4988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RideOn.Components", "src\RideOn.Components\RideOn.Components.csproj", "{5848FBF8-77D9-4D12-84F7-968A52A2EAA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RideOn.Contracts", "src\RideOn.Contracts\RideOn.Contracts.csproj", "{114F5258-53A0-47FC-93B2-5D1662A4224F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B3FCE72-2D5F-4109-BA51-496508AA4988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B3FCE72-2D5F-4109-BA51-496508AA4988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B3FCE72-2D5F-4109-BA51-496508AA4988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B3FCE72-2D5F-4109-BA51-496508AA4988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5848FBF8-77D9-4D12-84F7-968A52A2EAA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5848FBF8-77D9-4D12-84F7-968A52A2EAA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5848FBF8-77D9-4D12-84F7-968A52A2EAA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5848FBF8-77D9-4D12-84F7-968A52A2EAA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{114F5258-53A0-47FC-93B2-5D1662A4224F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{114F5258-53A0-47FC-93B2-5D1662A4224F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{114F5258-53A0-47FC-93B2-5D1662A4224F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{114F5258-53A0-47FC-93B2-5D1662A4224F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
