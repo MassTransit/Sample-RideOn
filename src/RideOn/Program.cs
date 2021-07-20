@@ -55,17 +55,16 @@ namespace RideOn
                         k.TopicEndpoint<Null, PatronEntered>(nameof(PatronEntered), nameof(RideOn), c =>
                         {
                             c.AutoOffsetReset = AutoOffsetReset.Earliest;
+                            c.CreateIfMissing(t => t.NumPartitions = 1);
                             c.ConfigureSaga<PatronState>(context);
                         });
 
                         k.TopicEndpoint<Null, PatronLeft>(nameof(PatronLeft), nameof(RideOn), c =>
                         {
                             c.AutoOffsetReset = AutoOffsetReset.Earliest;
+                            c.CreateIfMissing(t => t.NumPartitions = 1);
                             c.ConfigureSaga<PatronState>(context);
                         });
-
-                        k.TopicProducer<Null, PatronEntered>(nameof(PatronEntered), c => { });
-                        k.TopicProducer<Null, PatronLeft>(nameof(PatronLeft), c => { });
                     });
                 });
             });
@@ -118,8 +117,8 @@ namespace RideOn
 
                 using var serviceScope = provider.CreateScope();
 
-                var enteredProducer = serviceScope.ServiceProvider.GetRequiredService<IKafkaProducer<Null, PatronEntered>>();
-                var leftProducer = serviceScope.ServiceProvider.GetRequiredService<IKafkaProducer<Null, PatronLeft>>();
+                var enteredProducer = serviceScope.ServiceProvider.GetRequiredService<ITopicProducer<PatronEntered>>();
+                var leftProducer = serviceScope.ServiceProvider.GetRequiredService<ITopicProducer<PatronLeft>>();
 
                 var random = new Random();
 
