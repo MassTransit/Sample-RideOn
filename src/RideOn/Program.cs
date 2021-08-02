@@ -42,11 +42,15 @@ namespace RideOn
 
                 x.AddRider(rider =>
                 {
-                    rider.AddSagaStateMachine<PatronStateMachine, PatronState>(typeof(PatronStateDefinition))
+                    rider.AddSagaStateMachine<PatronStateMachine, PatronState, PatronStateDefinition>()
                         .InMemoryRepository();
 
                     rider.AddProducer<PatronEntered>(nameof(PatronEntered));
                     rider.AddProducer<PatronLeft>(nameof(PatronLeft));
+
+                    // duplicative, since it's already published to RabbitMQ, but showing how to also
+                    // produce an event on Kafka from a state machine
+                    rider.AddProducer<PatronVisited>(nameof(PatronVisited));
 
                     rider.UsingKafka((context, k) =>
                     {

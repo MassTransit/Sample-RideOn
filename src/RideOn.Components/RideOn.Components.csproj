@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="7.2.1" />
+    <PackageReference Include="MassTransit.Kafka" Version="7.2.1" />
   </ItemGroup>
 
   <ItemGroup>

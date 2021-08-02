@@ -36,7 +36,17 @@ namespace RideOn.Components
             DuringAny(
                 When(Visited)
                     .Then(context => Console.WriteLine("Visited: {0}", context.Instance.CorrelationId))
+
+                    // Publish will go to RabbitMQ, via the bus
                     .PublishAsync(context => context.Init<PatronVisited>(new
+                    {
+                        PatronId = context.Instance.CorrelationId,
+                        context.Instance.Entered,
+                        context.Instance.Left
+                    }))
+
+                    // Produce will go to Kafka
+                    .Produce(context => context.Init<PatronVisited>(new
                     {
                         PatronId = context.Instance.CorrelationId,
                         context.Instance.Entered,
