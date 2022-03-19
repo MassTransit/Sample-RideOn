@@ -1,7 +1,5 @@
-using GreenPipes;
-using GreenPipes.Partitioning;
 using MassTransit;
-using MassTransit.Definition;
+using MassTransit.Middleware;
 using RideOn.Contracts;
 
 namespace RideOn.Components
